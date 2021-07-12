@@ -1428,7 +1428,7 @@ body {
 
 .gallery__img:after {
     content: '';
-    background-image: url("../images/gallery/ic-searhc.svg");
+    background-image: url("./assets/images/gallery/ic-searhc.svg");
     width: 30px;
     height: 30px;
     top: 50%;
@@ -1540,7 +1540,7 @@ body {
     content: '';
     width: 57px;
     height: 39px;
-    background-image: url("../images/reviews-quote.svg");
+    background-image: url("./assets/images/reviews-quote.svg");
     background-size: cover;
     position: absolute;
     top: 0;
