@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arch Move</title>
+    <title><?php bloginfo( 'description'); ?></title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <?php wp_head(); ?>
   </head>
@@ -13,25 +13,18 @@
       <div class="header__wrapper">
         <div class="header__left">
           <div class="header__logo logo">
-            <a href="" class="logo__link">
-              <img src="<?php echo IMG_DIR; ?>/logo-arch.svg" alt="logo" />
+            <a href="<?php bloginfo( 'url'); ?>" class="logo__link">
+              <img src="<?php bloginfo( 'template_url'); ?>/assets/images/logo-arch.svg" alt="logo" />
             </a>
           </div>
           <nav class="header__nav nav">
-            <ul class="nav__list">
-              <li class="nav__item">
-                <a href="#" class="nav__link">Design Gallery</a>
-              </li>
-              <li class="nav__item">
-                <a href="#" class="nav__link">List of Architect</a>
-              </li>
-              <li class="nav__item">
-                <a href="#" class="nav__link">Articles</a>
-              </li>
-              <li class="nav__item">
-                <a href="#" class="nav__link">How it Works</a>
-              </li>
-            </ul>
+          <?php wp_nav_menu( [
+                      'theme_location'  => 'top_menu',
+                      'container'       => null,
+                      'menu_class'      => 'nav__list',
+                      'menu_id'         => 'nav',
+
+                    ] ); ?>
           </nav>
         </div>
         <div class="header__right">

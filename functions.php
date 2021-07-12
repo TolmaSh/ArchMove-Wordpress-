@@ -8,7 +8,11 @@ define('IMG_DIR', THEME_ROOT . '/assets/images');
 // Регистрация хуков
 add_action( 'wp_enqueue_scripts', 'archmove_style' );
 add_action( 'wp_enqueue_scripts', 'archmove_scripts' );
-
+add_action( 'after_setup_theme', 'theme_register_nav_menu' );
+function theme_register_nav_menu() {
+	register_nav_menu( 'top_menu', 'Меню в шапке' );
+	register_nav_menu( 'footer_menu', 'Меню в подвале' );
+}
 function archmove_style() {
 	wp_enqueue_style( 'main-style', get_stylesheet_uri() );
 	
