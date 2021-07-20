@@ -1,13 +1,11 @@
 <?php get_header(); ?>
     <main class="main">
       <div class="container">
-        <h1 class="main__title title">Build Your Dream <span>House</span></h1>
+        <h1 class="main__title title"><?php the_field('main_title'); ?> <span><?php the_field('accent_word'); ?></span></h1>
         <div class="main__content">
           <div class="main__content-left">
             <p class="main__content-text">
-              The first and most trusted marketplace of design & build house in
-              The World. 100% guaranteed Build safe, comfortable and transparent
-              with a project management for the best result
+            <?php the_field('main_text'); ?>
             </p>
             <button class="main__content-btn btn btn-active">
               Free Consultation
@@ -15,7 +13,7 @@
           </div>
           <img
             class="main__content-img"
-            src="<?php echo IMG_DIR; ?>/mainRoom-image.png"
+            src="<?php the_field('main_img'); ?>"
             alt="mainImage"
           />
         </div>

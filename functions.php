@@ -28,3 +28,55 @@ function archmove_scripts() {
     wp_enqueue_script( 'magnific-popup', JS_DIR . '/jquery.magnific-popup.js', array(jquery), 'null', true );
     wp_enqueue_script( 'main-scripts', JS_DIR . '/script.js', array(jquery), 'null', true );
 }    
+// Новое поле в меню для Features
+
+add_action( 'init', 'register_post_types' );
+function register_post_types(){
+	add_theme_support( 'post-thumbnails' );
+	register_post_type( 'features' , [
+		'labels' => [
+				'name'                     => 'Features', // основное название для типа записи, обычно во множественном числе.
+				'singular_name'            => 'Feature', // название для одной записи этого типа.
+				'add_new'                  => 'Добавить Feature', // текст для добавления новой записи, как "добавить новый" у постов в админ-панели.
+													// Если нужно использовать перевод названия, вписывайте подобным образом: _x('Add New', 'product');
+				'add_new_item'             => 'Добавление Feature', // текст заголовка у вновь создаваемой записи в админ-панели. Как "Добавить новый пост" у постов.
+				'edit_item'                => 'Редактирование Feature', // текст для редактирования типа записи. По умолчанию: редактировать пост/редактировать страницу.
+				'new_item'                 => 'Новый Feature', // текст новой записи. По умолчанию: "Новый пост"
+				'view_item'                => 'Смотреть Feature', // текст для просмотра записи этого типа. По умолчанию: "Посмотреть пост"/"Посмотреть страницу".
+				'search_items'             => 'Искать Feature', // текст для поиска по этим типам записи. По умолчанию "Найти пост"/"найти страницу".
+				'not_found'                => 'Не найдено', // текст, если в результате поиска ничего не было найдено.
+													// По умолчанию: "Постов не было найдено"/"Страниц не было найдено".
+				'not_found_in_trash'       => 'Не найдено в корзине', // текст, если не было найдено в корзине. По умолчанию "Постов не было найдено в корзине"/"Страниц
+												// не было найдено в корзине".
+				'menu_name'                => 'Features' // Название меню. По умолчанию равен name.
+		],
+		'public' => true,
+		'show-ui' => null, 
+		'menu_icon' => 'dashicons-star-filled' ,
+		'supports' => [ 'title' , 'editor' , 'thumbnail'],
+
+	] );
+
+}
+
+function getFeatures() {
+	$args = array(
+		'orderby'     => 'date',
+		'order'       => 'DESC',
+		'post_type'   => 'features',
+	);
+	return get_post($args);
+// 	$features = [];
+
+// foreach(get_posts($args) as $posts) {
+// 		$feature['img'] = get_the_post_thumbnail_url( $post->ID, 'thumbnail' );
+// 		$feature['title'] = $post->post_title;
+// 		$feature['text'] = $post->post_content;
+
+// 		$features[] = $feature;
+// 	}
+// 	return $features;
+
+}
+
+var_dump(getFeatures());
