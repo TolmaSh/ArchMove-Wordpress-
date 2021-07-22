@@ -1,13 +1,11 @@
 <?php get_header(); ?>
     <main class="main">
       <div class="container">
-        <h1 class="main__title title">Build Your Dream <span>House</span></h1>
+        <h1 class="main__title title"><?php the_field('main_title'); ?> <span><?php the_field('accent_word'); ?></span></h1>
         <div class="main__content">
           <div class="main__content-left">
             <p class="main__content-text">
-              The first and most trusted marketplace of design & build house in
-              The World. 100% guaranteed Build safe, comfortable and transparent
-              with a project management for the best result
+            <?php the_field('main_text'); ?>
             </p>
             <button class="main__content-btn btn btn-active">
               Free Consultation
@@ -15,13 +13,13 @@
           </div>
           <img
             class="main__content-img"
-            src="<?php echo IMG_DIR; ?>/mainRoom-image.png"
+            src="<?php the_field('main_img'); ?>"
             alt="mainImage"
           />
         </div>
         <section class="main__gallery gallery">
           <h2 class="gallery__title title">
-            Build professional valuable room for you
+          <?php the_field('gallery_title'); ?>
           </h2>
           <div class="gallery__wrapper popup-gallery">
             <a class="gallery__img" href="<?php echo IMG_DIR; ?>/gallery/img1.png" title="GalleryPhoto">
@@ -69,7 +67,7 @@
           </div>
         </section>
         <section class="main__about about">
-          <h2 class="about__title title">Build your needs with Archmove</h2>
+          <h2 class="about__title title"><?php the_field('about_title'); ?></h2>
           <div class="about__main">
             <img
               src="<?php echo IMG_DIR; ?>/about-img.png"
@@ -77,50 +75,26 @@
               class="about__img"
             />
             <div class="about__content">
+              <?php foreach(getFeatures() as $feature): ?>
               <div class="about__content-wrapper">
                 <img
-                  src="<?php echo IMG_DIR; ?>/about-icon1.svg"
+                  src="<?php echo $feature['img'] ?>"
                   alt=""
                   class="about__content-img"
                 />
                 <div class="about__content-text">
                   <h4 class="about__content-title">
-                    100% guaranteed project completion
+                  <?php echo $feature['title'] ?>
                   </h4>
                   <p class="about__content-subtitle">
-                    Build safe, comfortable and transparent with a project
-                    management application with a joint account.
+                  <?php echo $feature['text'] ?>
                   </p>
+                  <i><?php echo $feature['add_desc'] ?></i>
                 </div>
               </div>
-              <div class="about__content-wrapper">
-                <img
-                  src="<?php echo IMG_DIR; ?>/about-icon2.svg"
-                  alt=""
-                  class="about__content-img"
-                />
-                <div class="about__content-text">
-                  <h4 class="about__content-title">No additional fees</h4>
-                  <p class="about__content-subtitle">
-                    There are no hidden costs. The value of the offer you get is
-                    the value you paid.
-                  </p>
-                </div>
-              </div>
-              <div class="about__content-wrapper">
-                <img
-                  src="<?php echo IMG_DIR; ?>/about-icon3.svg"
-                  alt=""
-                  class="about__content-img"
-                />
-                <div class="about__content-text">
-                  <h4 class="about__content-title">Get escort from the Team</h4>
-                  <p class="about__content-subtitle">
-                    Monitor reports from the Arsitag team who check directly in
-                    the field.
-                  </p>
-                </div>
-              </div>
+
+              <?php endforeach; ?>
+              
               <button class="about__content-btn btn btn-active">
                 CONSULTATION
               </button>
@@ -128,7 +102,7 @@
           </div>
         </section>
         <section class="main__reviews reviews">
-          <h2 class="reviews__title title">Sound Too Good To Be True?</h2>
+          <h2 class="reviews__title title"><?php the_field('reviews_title'); ?></h2>
           <div class="reviews__content swiper">
             <div class="swiper-container">
               <!-- Additional required wrapper -->
@@ -190,7 +164,7 @@
             />
             <div class="consultate__content">
               <h2 class="consultate__title">
-                Realize your dream project with <span>Archmove</span>
+              <?php the_field('consultate_title'); ?> <span><?php the_field('accent_word_consultate'); ?></span>
               </h2>
               <button class="consultate__btn btn btn-active">
                 FREE CONSULTATION
@@ -201,7 +175,7 @@
 
 
         <section class="main__partners partners">
-            <h2 class="partners__title title">Our Partners</h2>
+            <h2 class="partners__title title"> <?php the_field('partners_title'); ?> </h2>
             <div class="partners__wrapper">
               <img src="<?php echo IMG_DIR; ?>/partners/partner1.svg" alt="partner-img" class="partners__img" />
               <img src="<?php echo IMG_DIR; ?>/partners/partner2.svg" alt="partner-img" class="partners__img" />
