@@ -33,6 +33,8 @@ function archmove_scripts() {
 add_action( 'init', 'register_post_types' );
 function register_post_types(){
 	add_theme_support( 'post-thumbnails' );
+
+	
 	register_post_type( 'features', [
 		'labels' => [
 
@@ -67,6 +69,8 @@ function getFeatures() {
 		'post_type'   => 'features',
 	);
 
+
+
 	 $features = [];
 
 	foreach(get_posts($args) as $post) {
@@ -78,6 +82,8 @@ function getFeatures() {
      $feature['text'] = $post->post_content;
 
      $features[] = $feature;
+
+	 
  }
  return $features;
 }
