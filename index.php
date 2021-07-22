@@ -22,44 +22,44 @@
           <?php the_field('gallery_title'); ?>
           </h2>
           <div class="gallery__wrapper popup-gallery">
-            <a class="gallery__img" href="<?php echo IMG_DIR; ?>/gallery/img1.png" title="GalleryPhoto">
+            <a class="gallery__img" href="<?php the_field('gallery_img1'); ?>" title="GalleryPhoto">
               <img
-                src="<?php echo IMG_DIR; ?>/gallery/img1.png"
+                src="<?php the_field('gallery_img1'); ?>"
                 alt=""
                 class="gallery__img-item"
               />
             </a>
-            <a class="gallery__img" href="<?php echo IMG_DIR; ?>/gallery/img2.png" title="GalleryPhoto">
+            <a class="gallery__img" href="<?php the_field('gallery_img2'); ?>" title="GalleryPhoto">
               <img
-                src="<?php echo IMG_DIR; ?>/gallery/img2.png"
+                src="<?php the_field('gallery_img2'); ?>"
                 alt=""
                 class="gallery__img-item"
               />
             </a>
-            <a class="gallery__img" href="<?php echo IMG_DIR; ?>/gallery/img3.png" title="GalleryPhoto">
+            <a class="gallery__img" href="<?php the_field('gallery_img3'); ?>" title="GalleryPhoto">
               <img
-                src="<?php echo IMG_DIR; ?>/gallery/img3.png"
+                src="<?php the_field('gallery_img3'); ?>"
                 alt=""
                 class="gallery__img-item"
               />
             </a>
-            <a class="gallery__img" href="<?php echo IMG_DIR; ?>/gallery/img4.png" title="GalleryPhoto">
+            <a class="gallery__img" href="<?php the_field('gallery_img4'); ?>" title="GalleryPhoto">
               <img
-                src="<?php echo IMG_DIR; ?>/gallery/img4.png"
+                src="<?php the_field('gallery_img4'); ?>"
                 alt=""
                 class="gallery__img-item"
               />
             </a>
-            <a class="gallery__img" href="<?php echo IMG_DIR; ?>/gallery/img2.png" title="GalleryPhoto">
+            <a class="gallery__img" href="<?php the_field('gallery_img5'); ?>" title="GalleryPhoto">
               <img
-                src="<?php echo IMG_DIR; ?>/gallery/img2.png"
+                src="<?php the_field('gallery_img5'); ?>"
                 alt=""
                 class="gallery__img-item"
               />
             </a>
-            <a class="gallery__img" href="<?php echo IMG_DIR; ?>/gallery/img1.png" title="GalleryPhoto">
+            <a class="gallery__img" href="<?php the_field('gallery_img6'); ?>" title="GalleryPhoto">
               <img
-                src="<?php echo IMG_DIR; ?>/gallery/img1.png"
+                src="<?php the_field('gallery_img6'); ?>"
                 alt=""
                 class="gallery__img-item"
               />
