@@ -27,6 +27,7 @@
                     ] ); ?>
           </nav>
         </div>
+        
         <div class="header__right">
           <button class="header__search">
             <img
