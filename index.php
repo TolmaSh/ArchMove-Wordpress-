@@ -108,45 +108,18 @@
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper">
                 <!-- Slides -->
+                <?php foreach(getReviews() as $review): ?>
                 <div class="swiper-slide">
                   <blockquote class="swiper-content">
                     <p class="swiper-text">
-                      We just wanted to thank you for this fantastic website! We
-                      are so grateful for being able to advertise our Petite
-                      cabin and receive feedback from people from all over the
-                      U.S. and even further.
+                    <?php echo $review['text'] ?>
                     </p>
                     <cite class="swiper-author"
-                      ><span>Adam Morph</span> — CEO A lfatech</cite
-                    >
+                      ><span><?php echo $review['review_author'] ?></span> — <?php echo $review['position_author'] ?></cite>
                   </blockquote>
-                </div>
-                <div class="swiper-slide">
-                  <blockquote class="swiper-content">
-                    <p class="swiper-text">
-                      We just wanted to thank you for this fantastic website! We
-                      are so grateful for being able to advertise our Petite
-                      cabin and receive feedback from people from all over the
-                      U.S. and even further.
-                    </p>
-                    <cite class="swiper-author"
-                      ><span>Adam Morph</span> — CEO A lfatech</cite
-                    >
-                  </blockquote>
-                </div>
-                <div class="swiper-slide">
-                  <blockquote class="swiper-content">
-                    <p class="swiper-text">
-                      We just wanted to thank you for this fantastic website! We
-                      are so grateful for being able to advertise our Petite
-                      cabin and receive feedback from people from all over the
-                      U.S. and even further.
-                    </p>
-                    <cite class="swiper-author"
-                      ><span>Adam Morph</span> — CEO A lfatech</cite
-                    >
-                  </blockquote>
-                </div>
+                </div>  
+                <?php endforeach; ?>
+
               </div>
 
               <!-- If we need navigation buttons -->
